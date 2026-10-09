@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O/L MATHS with OTR</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #071225;
+      color: white;
+    }
+    header {
+      padding: 22px 16px;
+      background: #0d1b34;
+      text-align: center;
+      border-bottom: 2px solid #22d3ee;
+    }
+    header h1 { margin: 0; color: #facc15; }
+    header p { color: #cbd5e1; }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      padding: 15px 8px;
+      background: #132440;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .hero {
+      text-align: center;
+      padding: 55px 18px;
+      background: linear-gradient(140deg, #10254a, #164e63);
+    }
+    .hero h2 { font-size: 32px; margin: 0 0 15px; }
+    .hero p { line-height: 1.8; color: #e2e8f0; }
+    .btn {
+      display: inline-block;
+      margin: 8px;
+      padding: 13px 20px;
+      border-radius: 9px;
+      background: #facc15;
+      color: #071225;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section { padding: 30px 16px; }
+    section h2 {
+      text-align: center;
+      color: #22d3ee;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 950px;
+      margin: 22px auto;
+    }
+    .card {
+      background: #132440;
+      border: 1px solid #294563;
+      border-radius: 14px;
+      padding: 22px;
+      text-align: center;
+    }
+    .card h3 { color: #facc15; }
+    .card p { color: #cbd5e1; line-height: 1.6; }
+    footer {
+      text-align: center;
+      padding: 24px 12px;
+      background: #020817;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>O/L MATHS with OTR</h1>
+    <p>MAGIC of the MATHS ✨</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#lessons">Lessons</a>
+    <a href="#papers">Past Papers</a>
+    <a href="#notes">PDF Notes</a>
+    <a href="#quiz">Online Quiz</a>
+  </nav>
+
+  <div class="hero" id="home">
+    <h2>ගණිතය පහසුවෙන් ඉගෙන ගනිමු!</h2>
+    <p>
+      ශ්‍රී ලංකාවේ G.C.E. O/L ගණිතය සඳහා<br>
+      පාඩම්, ප්‍රශ්න පත්‍ර සහ අධ්‍යයන සටහන්.
+    </p>
+    <a class="btn" href="#lessons">පාඩම් බලන්න</a>
+    <a class="btn" href="#papers">Past Papers</a>
+  </div>
+
+  <section id="lessons">
+    <h2>📚 Maths Lessons</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>සමීකරණ</h3>
+        <p>ගණිත සංකල්ප පියවරෙන් පියවර ඉගෙන ගන්න.</p>
+        <a class="btn" href="#contact">පාඩම් බලන්න</a>
+      </div>
+      <div class="card">
+        <h3>ත්‍රිකෝණමිතිය</h3>
+        <p>Trigonometry පාඩම් සහ ප්‍රශ්න සාකච්ඡා.</p>
+        <a class="btn" href="#contact">පාඩම් බලන්න</a>
+      </div>
+      <div class="card" id="papers">
+        <h3>Past Papers</h3>
+        <p>O/L විභාග ප්‍රශ්න පුහුණු වීමට.</p>
+        <a class="btn" href="#contact">ප්‍රශ්න බලන්න</a>
+      </div>
+      <div class="card" id="notes">
+        <h3>PDF Notes</h3>
+        <p>අධ්‍යයනය සඳහා සටහන් සහ වැඩ පත්‍රිකා.</p>
+        <a class="btn" href="#contact">සටහන් බලන්න</a>
+      </div>
+      <div class="card" id="quiz">
+        <h3>Online Quiz</h3>
+        <p>ඔබේ දැනුම පරීක්ෂා කරගන්න.</p>
+        <a class="btn" href="#contact">ඉක්මනින්</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>📱 අප සමඟ සම්බන්ධ වන්න</h2>
+    <div class="card">
+      <p>YouTube පාඩම් සහ පන්ති තොරතුරු සඳහා අප සමඟ එක්වන්න.</p>
+      <p>ඔබේ YouTube සහ WhatsApp links ඉදිරියේදී මෙතැනට එක් කරමු.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 O/L MATHS with OTR</p>
+    <p>MAGIC of the MATHS</p>
+  </footer>
+</body>
+</html>
