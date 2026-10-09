@@ -4,18 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#08111f">
-  <meta name="description" content="O/L MATHS with OTR - Grade 10 and 11 Mathematics lessons, O/L past papers and revision resources.">
-  <title>O/L MATHS with OTR | Learn Mathematics</title>
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="O/L MATHS with OTR - Sri Lankan Grade 10 and 11 Mathematics lessons, past papers, notes and quizzes.">
+  <title>O/L MATHS with OTR | Magic of the Maths</title>
 
   <style>
     :root {
-      --bg: #08111f;
-      --panel: #101e31;
-      --gold: #ffc857;
-      --cyan: #54d9ed;
-      --white: #f5f7fb;
-      --muted: #aab8cc;
+      --bg: #080808;
+      --surface: #131313;
+      --surface2: #1c1a15;
+      --gold: #f5c451;
+      --gold2: #ffe6a0;
+      --white: #f8f6f0;
+      --muted: #b7b2a6;
+      --border: #393020;
+      --green: #8be0ac;
     }
 
     * {
@@ -27,30 +30,34 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: Arial, "Noto Sans Sinhala", sans-serif;
       background: var(--bg);
       color: var(--white);
+      font-family: Arial, "Noto Sans Sinhala", sans-serif;
       line-height: 1.7;
     }
 
-    a { text-decoration: none; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
 
     .container {
-      width: min(1100px, 90%);
+      width: min(1120px, 91%);
       margin: auto;
     }
+
+    .gold { color: var(--gold); }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: rgba(8, 17, 31, .95);
-      border-bottom: 1px solid #24344b;
+      z-index: 20;
+      background: rgba(8, 8, 8, .96);
+      border-bottom: 1px solid var(--border);
       backdrop-filter: blur(12px);
     }
 
     nav {
-      min-height: 72px;
+      min-height: 76px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -59,59 +66,69 @@
       padding: 12px 0;
     }
 
-    .logo {
-      color: var(--gold);
+    .brand {
+      font-size: 18px;
       font-weight: 900;
-      font-size: 19px;
+      letter-spacing: .3px;
+      color: var(--gold);
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px;
     }
 
     .nav-links {
       display: flex;
-      gap: 18px;
+      gap: 17px;
       flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: var(--white);
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .nav-links a:hover { color: var(--gold); }
 
     .hero {
-      padding: 82px 0 68px;
       text-align: center;
+      padding: 82px 0 75px;
       background:
-        radial-gradient(ellipse at top, #18385a 0%, transparent 65%),
-        var(--bg);
+        radial-gradient(ellipse at 50% 0%, #453416 0%, transparent 52%),
+        linear-gradient(180deg, #11100c, var(--bg));
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
     }
 
-    .eyebrow {
+    .tag {
       display: inline-block;
-      padding: 5px 14px;
-      border: 1px solid #526078;
-      border-radius: 30px;
-      color: var(--cyan);
-      font-size: 13px;
-      margin-bottom: 18px;
+      border: 1px solid #725d30;
+      color: var(--gold2);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(36px, 7vw, 66px);
-      line-height: 1.15;
-      margin-bottom: 20px;
-      font-weight: 900;
+      font-size: clamp(36px, 8vw, 72px);
+      line-height: 1.13;
+      letter-spacing: -1px;
+      margin-bottom: 18px;
     }
 
-    h1 span { color: var(--gold); }
+    h1 span {
+      color: var(--gold);
+      text-shadow: 0 0 28px #e2ad4230;
+    }
 
     .hero p {
+      max-width: 690px;
       color: var(--muted);
-      max-width: 650px;
-      margin: 0 auto 28px;
+      margin: 0 auto 26px;
     }
 
-    .buttons {
+    .actions {
       display: flex;
       justify-content: center;
       gap: 12px;
@@ -119,49 +136,122 @@
     }
 
     .btn {
-      display: inline-block;
-      padding: 12px 21px;
-      border-radius: 9px;
-      font-weight: bold;
-      transition: .2s;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 14px;
+      border: 1px solid var(--gold);
+      cursor: pointer;
+      transition: .2s ease;
     }
 
     .btn:hover { transform: translateY(-2px); }
 
-    .primary {
-      background: var(--gold);
-      color: #111827;
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      color: #161109;
     }
 
-    .secondary {
-      border: 1px solid #526078;
-      color: var(--white);
+    .btn-outline {
+      color: var(--gold2);
+      background: transparent;
     }
 
-    section { padding: 55px 0; }
-
-    .section-title {
-      font-size: clamp(25px, 4vw, 36px);
-      margin-bottom: 8px;
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 650px;
+      margin: 38px auto 0;
     }
 
-    .section-desc {
+    .stat {
+      padding: 17px 8px;
+      background: #ffffff08;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold);
+      font-size: 22px;
+    }
+
+    .stat span {
       color: var(--muted);
-      margin-bottom: 27px;
+      font-size: 12px;
+    }
+
+    section { padding: 65px 0; }
+
+    .section-head { margin-bottom: 25px; }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(25px, 5vw, 36px);
+      line-height: 1.35;
+      margin: 6px 0 8px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0 25px;
+    }
+
+    .search-row input,
+    .search-row select {
+      min-width: 0;
+      flex: 1;
+      padding: 13px 14px;
+      color: var(--white);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      outline: none;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--gold);
+    }
+
+    select option {
+      background: var(--surface);
+      color: var(--white);
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr));
       gap: 18px;
     }
 
     .card {
-      background: var(--panel);
-      padding: 24px;
-      border: 1px solid #24344b;
-      border-radius: 16px;
-      transition: .2s;
+      background: linear-gradient(145deg, #171717, #101010);
+      border: 1px solid #302b20;
+      border-radius: 15px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: transform .22s, border-color .22s;
     }
 
     .card:hover {
@@ -169,65 +259,178 @@
       border-color: var(--gold);
     }
 
-    .card .emoji { font-size: 32px; }
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: #f5c45112;
+      border: 1px solid #725d303d;
+      font-size: 24px;
+      margin-bottom: 13px;
+    }
 
     .card h3 {
-      color: var(--gold);
-      margin: 12px 0 8px;
-      font-size: 20px;
+      font-size: 19px;
+      margin-bottom: 7px;
     }
 
     .card p {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
+      margin-bottom: 17px;
+      flex: 1;
+    }
+
+    .card .btn { width: 100%; margin-top: auto; }
+
+    .no-results {
+      color: var(--muted);
+      padding: 22px 0;
+    }
+
+    .alt-section {
+      background: #100e09;
+      border-top: 1px solid #2a2418;
+      border-bottom: 1px solid #2a2418;
+    }
+
+    .quiz-box {
+      max-width: 750px;
+      background: var(--surface);
+      border: 1px solid #514124;
+      border-radius: 17px;
+      padding: clamp(18px, 4vw, 30px);
+    }
+
+    .quiz-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      border: 1px solid var(--border);
+      color: var(--gold2);
+      border-radius: 30px;
+      padding: 4px 11px;
+      font-size: 12px;
+    }
+
+    .quiz-question {
+      font-size: 21px;
+      font-weight: bold;
       margin-bottom: 18px;
     }
 
-    .card-link {
-      color: var(--cyan);
-      font-weight: bold;
+    .answers {
+      display: grid;
+      gap: 10px;
     }
 
-    .feature {
-      background: #0d192a;
-      border-top: 1px solid #1d3047;
-      border-bottom: 1px solid #1d3047;
+    .answer {
+      text-align: left;
+      padding: 13px 15px;
+      border: 1px solid #393939;
+      border-radius: 9px;
+      background: #0c0c0c;
+      color: var(--white);
+      cursor: pointer;
     }
 
-    .banner {
-      text-align: center;
-      background: linear-gradient(135deg, #142c48, #101e31);
-      border: 1px solid #30445e;
-      padding: 35px 20px;
-      border-radius: 18px;
+    .answer:hover:not(:disabled) {
+      border-color: var(--gold);
     }
 
-    .banner h2 {
-      color: var(--gold);
-      font-size: clamp(25px, 5vw, 38px);
-      margin-bottom: 10px;
+    .answer:disabled { cursor: default; opacity: .9; }
+
+    .answer.correct {
+      border-color: var(--green);
+      color: var(--green);
     }
 
-    .banner p {
+    .answer.wrong {
+      border-color: #f08b83;
+      color: #f08b83;
+    }
+
+    .feedback {
+      margin-top: 14px;
       color: var(--muted);
-      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .quiz-controls {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .quiz-controls .btn:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .contact-banner {
+      text-align: center;
+      padding: 38px 20px;
+      border: 1px solid #514124;
+      border-radius: 17px;
+      background: radial-gradient(ellipse at top, #392c13, #15120d 75%);
+    }
+
+    .contact-banner p {
+      color: var(--muted);
+      max-width: 620px;
+      margin: 12px auto 22px;
     }
 
     footer {
-      text-align: center;
-      padding: 30px 15px;
-      border-top: 1px solid #24344b;
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
+      text-align: center;
     }
 
     footer strong { color: var(--gold); }
 
-    @media (max-width: 600px) {
+    .back-top {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #111;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 0 4px 20px #0008;
+    }
+
+    @media (max-width: 650px) {
       nav { justify-content: center; }
-      .nav-links { justify-content: center; gap: 12px; }
-      .hero { padding: 58px 0 45px; }
-      section { padding: 42px 0; }
+      .nav-links { justify-content: center; gap: 10px 15px; }
+      .hero { padding: 57px 0 48px; }
+      section { padding: 45px 0; }
+      .stats { gap: 7px; }
+      .stat strong { font-size: 19px; }
+      .search-row { flex-direction: column; }
+      .search-row input, .search-row select { width: 100%; flex: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
@@ -235,13 +438,18 @@
 <body>
   <header>
     <nav class="container">
-      <a class="logo" href="#">📐 OTR MATHS</a>
+      <a class="brand" href="#home">
+        OTR MATHS
+        <small>MAGIC OF THE MATHS</small>
+      </a>
 
       <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#lessons">Lessons</a>
         <a href="#papers">Past Papers</a>
-        <a href="#resources">Resources</a>
+        <a href="#notes">PDF Notes</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
@@ -249,154 +457,457 @@
   <main>
     <section class="hero" id="home">
       <div class="container">
-        <span class="eyebrow">GRADE 10 • GRADE 11 • G.C.E. O/L</span>
+        <span class="tag">SRI LANKAN G.C.E. O/L MATHEMATICS</span>
 
-        <h1>MAGIC of the <span>MATHS</span></h1>
+        <h1>MAGIC of the<br><span>MATHS</span></h1>
 
         <p>
-          සාමාන්‍ය පෙළ ගණිතය පහසුවෙන් ඉගෙන ගනිමු!
-          පාඩම්, පසුගිය විභාග ප්‍රශ්න සහ පුනරීක්ෂණ සමඟ
-          ඔබේ ගණිත දැනුම දියුණු කරගන්න.
+          සාමාන්‍ය පෙළ ගණිතය තේරුම්ගෙන, පුහුණුවෙන්
+          දක්ෂතාවය වැඩි කරගනිමු!
+          Grade 10 සහ Grade 11 සිසුන් වෙනුවෙන්
+          පාඩම්, ප්‍රශ්න සාකච්ඡා සහ පුනරීක්ෂණ.
         </p>
 
-        <div class="buttons">
-          <a class="btn primary"
+        <div class="actions">
+          <a class="btn btn-gold"
              href="https://youtube.com/@olmathswithotr"
              target="_blank" rel="noopener">
-            ▶ Watch Lessons
+            ▶ YouTube Channel
           </a>
+          <a class="btn btn-outline" href="#lessons">
+            Explore Lessons ↓
+          </a>
+        </div>
 
-          <a class="btn secondary" href="#papers">
-            Explore Past Papers
-          </a>
+        <div class="stats">
+          <div class="stat">
+            <strong>10</strong>
+            <span>Grade 10</span>
+          </div>
+          <div class="stat">
+            <strong>11</strong>
+            <span>Grade 11</span>
+          </div>
+          <div class="stat">
+            <strong>O/L</strong>
+            <span>Exam Revision</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="lessons">
       <div class="container">
-        <h2 class="section-title">📚 Mathematics Lessons</h2>
-        <p class="section-desc">
-          ඔබට අවශ්‍ය පාඩම තෝරා YouTube එකෙන් වීඩියෝ බලන්න.
-        </p>
+        <div class="section-head">
+          <span class="kicker">Learn Mathematics</span>
+          <h2>📚 <span class="gold">Lessons</span> & Tutorials</h2>
+          <p>ඔයාට අවශ්‍ය පාඩම සොයාගෙන වීඩියෝ නරඹන්න.</p>
+        </div>
 
-        <div class="grid">
-          <article class="card">
-            <div class="emoji">📐</div>
+        <div class="search-row">
+          <input
+            id="lessonSearch"
+            type="search"
+            placeholder="🔎 පාඩමක් සොයන්න... (උදා: Algebra)"
+            aria-label="Search lessons">
+
+          <select id="lessonCategory" aria-label="Filter lessons">
+            <option value="all">සියලුම පාඩම්</option>
+            <option value="algebra">Algebra</option>
+            <option value="trigonometry">Trigonometry</option>
+            <option value="papers">Past Papers</option>
+            <option value="revision">Revision</option>
+          </select>
+        </div>
+
+        <div class="grid" id="lessonGrid">
+          <article class="card lesson-card"
+                   data-category="trigonometry"
+                   data-search="trigonometry ත්‍රිකෝණමිතිය triangles angles">
+            <div class="card-icon">📐</div>
             <h3>Trigonometry</h3>
-            <p>ත්‍රිකෝණමිතිය සහ අදාළ විභාග ප්‍රශ්න.</p>
-            <a class="card-link"
+            <p>ත්‍රිකෝණමිතිය සහ විභාග ප්‍රශ්න පුහුණුව.</p>
+            <a class="btn btn-outline"
                href="https://www.youtube.com/@olmathswithotr/search?query=Trigonometry"
                target="_blank" rel="noopener">Watch Lessons ↗</a>
           </article>
 
-          <article class="card">
-            <div class="emoji">➗</div>
-            <h3>Algebra</h3>
-            <p>සමීකරණ, වීජීය ප්‍රකාශන සහ ගණනය කිරීම්.</p>
-            <a class="card-link"
+          <article class="card lesson-card"
+                   data-category="algebra"
+                   data-search="algebra වීජ ගණිතය equations සමීකරණ fractions භාග">
+            <div class="card-icon">➗</div>
+            <h3>Algebra & Equations</h3>
+            <p>වීජ ගණිතය, සමීකරණ සහ භාග පිළිබඳ පාඩම්.</p>
+            <a class="btn btn-outline"
                href="https://www.youtube.com/@olmathswithotr/search?query=Algebra"
                target="_blank" rel="noopener">Watch Lessons ↗</a>
           </article>
 
-          <article class="card">
-            <div class="emoji">📝</div>
-            <h3>Past Paper Discussion</h3>
-            <p>O/L පසුගිය ප්‍රශ්න සහ පිළිතුරු සාකච්ඡා.</p>
-            <a class="card-link"
-               href="https://www.youtube.com/@olmathswithotr/search?query=Past+Papers"
+          <article class="card lesson-card"
+                   data-category="papers"
+                   data-search="past papers පසුගිය ප්‍රශ්න පත්‍ර ol discussion">
+            <div class="card-icon">📝</div>
+            <h3>Past Paper Discussions</h3>
+            <p>O/L පසුගිය විභාග ප්‍රශ්න සාකච්ඡා.</p>
+            <a class="btn btn-outline"
+               href="https://www.youtube.com/@olmathswithotr/search?query=Past%20Papers"
                target="_blank" rel="noopener">Watch Discussions ↗</a>
           </article>
 
-          <article class="card">
-            <div class="emoji">📊</div>
-            <h3>Grade 10 & 11</h3>
-            <p>10 සහ 11 ශ්‍රේණි ගණිත පාඩම් සඳහා වීඩියෝ සොයන්න.</p>
-            <a class="card-link"
-               href="https://www.youtube.com/@olmathswithotr/videos"
-               target="_blank" rel="noopener">View All Videos ↗</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="feature" id="papers">
-      <div class="container">
-        <h2 class="section-title">📄 O/L Past Papers</h2>
-        <p class="section-desc">
-          පසුගිය ප්‍රශ්න පත්‍ර සාකච්ඡා කරමින් විභාගයට සූදානම් වෙන්න.
-        </p>
-
-        <div class="grid">
-          <article class="card">
-            <div class="emoji">📘</div>
-            <h3>Past Paper Questions</h3>
-            <p>පසුගිය විභාග ප්‍රශ්න සාකච්ඡා.</p>
-            <a class="card-link"
-               href="https://www.youtube.com/@olmathswithotr/search?query=O%2FL+Past+Papers"
-               target="_blank" rel="noopener">Find Discussions ↗</a>
-          </article>
-
-          <article class="card">
-            <div class="emoji">🎯</div>
-            <h3>Revision</h3>
-            <p>විභාගයට පෙර පාඩම් නැවත මතක් කරගන්න.</p>
-            <a class="card-link"
+          <article class="card lesson-card"
+                   data-category="revision"
+                   data-search="revision පුනරීක්ෂණ exam preparation විභාගය">
+            <div class="card-icon">🎯</div>
+            <h3>Exam Revision</h3>
+            <p>විභාගයට සූදානම් වීමට පාඩම් නැවත අධ්‍යයනය කරන්න.</p>
+            <a class="btn btn-outline"
                href="https://www.youtube.com/@olmathswithotr/search?query=Revision"
-               target="_blank" rel="noopener">Start Revising ↗</a>
+               target="_blank" rel="noopener">Start Revision ↗</a>
+          </article>
+
+          <article class="card lesson-card"
+                   data-category="algebra"
+                   data-search="simultaneous equations සමගාමී සමීකරණ">
+            <div class="card-icon">🧮</div>
+            <h3>Simultaneous Equations</h3>
+            <p>සමගාමී සමීකරණ විසඳන ක්‍රම පුහුණු වෙන්න.</p>
+            <a class="btn btn-outline"
+               href="https://www.youtube.com/@olmathswithotr/search?query=Simultaneous%20Equations"
+               target="_blank" rel="noopener">Find Lessons ↗</a>
+          </article>
+
+          <article class="card lesson-card"
+                   data-category="revision"
+                   data-search="grade 10 grade 11 mathematics ගණිතය">
+            <div class="card-icon">🎓</div>
+            <h3>Grade 10 & 11</h3>
+            <p>ශ්‍රේණියට අදාළ ගණිත පාඩම් තෝරාගන්න.</p>
+            <a class="btn btn-outline"
+               href="https://www.youtube.com/@olmathswithotr/videos"
+               target="_blank" rel="noopener">All Videos ↗</a>
           </article>
         </div>
+
+        <p class="no-results" id="noResults" hidden>
+          මේ සෙවුමට ගැළපෙන පාඩම් හමු වුණේ නැහැ. වෙනත් වචනයක් උත්සාහ කරන්න.
+        </p>
       </div>
     </section>
 
-    <section id="resources">
+    <section class="alt-section" id="papers">
       <div class="container">
-        <h2 class="section-title">🎓 Student Resources</h2>
-        <p class="section-desc">
-          අමතර අධ්‍යාපනික සම්පත් සඳහා ඉදිරියේදී තවත් අංග එකතු කරමු.
-        </p>
+        <div class="section-head">
+          <span class="kicker">Practice Makes Progress</span>
+          <h2>📄 O/L <span class="gold">Past Papers</span></h2>
+          <p>පසුගිය ප්‍රශ්න සහ පිළිතුරු සාකච්ඡා සමඟ පුහුණුවෙන්න.</p>
+        </div>
 
         <div class="grid">
           <article class="card">
-            <div class="emoji">📥</div>
-            <h3>PDF Notes</h3>
-            <p>පාඩම් සටහන් සහ PDF බාගත කිරීම් ඉදිරියේදී මෙතැනට එකතු කළ හැකියි.</p>
+            <div class="card-icon">📘</div>
+            <h3>O/L Paper Discussions</h3>
+            <p>Past paper discussion වීඩියෝ සොයාගන්න.</p>
+            <a class="btn btn-gold"
+               href="https://www.youtube.com/@olmathswithotr/search?query=O%2FL%20Past%20Papers"
+               target="_blank" rel="noopener">View Discussions ↗</a>
           </article>
 
           <article class="card">
-            <div class="emoji">✅</div>
-            <h3>Online Quiz</h3>
-            <p>ඔබේ දැනුම පරීක්ෂා කිරීමට online quiz එකක් ඉදිරියේදී එකතු කරමු.</p>
+            <div class="card-icon">✍️</div>
+            <h3>Question Practice</h3>
+            <p>විභාග ප්‍රශ්න විසඳන ක්‍රම අධ්‍යයනය කරන්න.</p>
+            <a class="btn btn-outline"
+               href="https://www.youtube.com/@olmathswithotr/search?query=Question%20Discussion"
+               target="_blank" rel="noopener">Practise Now ↗</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="notes">
       <div class="container">
-        <div class="banner">
-          <h2>O/L MATHS with OTR</h2>
-          <p>Learn Smart. Practise More. Achieve Your Goals.</p>
+        <div class="section-head">
+          <span class="kicker">Study Resources</span>
+          <h2>📥 <span class="gold">PDF Notes</span></h2>
+          <p>ඔයාගේ PDF files එකතු කර සිසුන්ට download කිරීමට ලබා දෙන්න.</p>
+        </div>
 
-          <a class="btn primary"
-             href="https://youtube.com/@olmathswithotr"
-             target="_blank" rel="noopener">
-            ▶ Subscribe on YouTube
-          </a>
+        <div class="grid">
+          <article class="card">
+            <div class="card-icon">📄</div>
+            <h3>Algebra Notes</h3>
+            <p>වීජ ගණිත සටහන් PDF එක මෙතැනට සම්බන්ධ කරන්න.</p>
+            <a class="btn btn-outline"
+               href="notes/algebra-notes.pdf"
+               download>Download PDF ↓</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📐</div>
+            <h3>Trigonometry Notes</h3>
+            <p>ත්‍රිකෝණමිතිය සටහන් PDF එක මෙතැනට සම්බන්ධ කරන්න.</p>
+            <a class="btn btn-outline"
+               href="notes/trigonometry-notes.pdf"
+               download>Download PDF ↓</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">📝</div>
+            <h3>Past Paper PDFs</h3>
+            <p>ඔයා සතුව ඇති ප්‍රශ්න පත්‍ර PDF files මෙතැනට එකතු කරන්න.</p>
+            <a class="btn btn-outline"
+               href="notes/past-papers.pdf"
+               download>Download PDF ↓</a>
+          </article>
+        </div>
+
+        <p style="color:var(--muted);font-size:12px;margin-top:18px">
+          සටහන: ඉහත PDF links වැඩ කිරීමට, සඳහන් file names වලට ගැළපෙන
+          PDF files repository එකට upload කරන්න.
+        </p>
+      </div>
+    </section>
+
+    <section class="alt-section" id="quiz">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Test Your Knowledge</span>
+          <h2>🧠 Online <span class="gold">Maths Quiz</span></h2>
+          <p>ප්‍රශ්න 5කට පිළිතුරු දී ඔයාගේ ලකුණු බලන්න.</p>
+        </div>
+
+        <div class="quiz-box">
+          <div class="quiz-top">
+            <strong class="gold">OTR Maths Challenge</strong>
+            <span class="pill" id="quizProgress">Question 1 / 5</span>
+          </div>
+
+          <div id="quizArea">
+            <p class="quiz-question" id="quizQuestion"></p>
+            <div class="answers" id="quizAnswers"></div>
+            <p class="feedback" id="quizFeedback" aria-live="polite"></p>
+
+            <div class="quiz-controls">
+              <button class="btn btn-gold" id="nextQuestion" disabled>
+                Next Question →
+              </button>
+            </div>
+          </div>
+
+          <div id="quizResult" hidden>
+            <h3 id="scoreHeading" class="gold"></h3>
+            <p id="scoreMessage" style="color:var(--muted);margin:12px 0 20px"></p>
+            <button class="btn btn-gold" id="restartQuiz">Try Again ↻</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-banner">
+          <span class="kicker">Join Our Learning Community</span>
+          <h2>O/L MATHS <span class="gold">with OTR</span></h2>
+          <p>
+            අලුත් ගණිත පාඩම්, past paper discussions සහ අධ්‍යාපනික
+            වීඩියෝ සඳහා අපගේ YouTube channel එකට පිවිසෙන්න.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-gold"
+               href="https://youtube.com/@olmathswithotr"
+               target="_blank" rel="noopener">
+              ▶ Visit YouTube Channel
+            </a>
+
+            <!-- Replace the number below with your WhatsApp number.
+                 Use country code, without +, spaces or dashes. -->
+            <a class="btn btn-outline"
+               href="https://wa.me/947XXXXXXXX"
+               target="_blank" rel="noopener">
+              WhatsApp Contact ↗
+            </a>
+          </div>
+
+          <p style="font-size:12px;margin-top:18px">
+            WhatsApp button එක ක්‍රියාත්මක කිරීමට code එකේ
+            947XXXXXXXX වෙනුවට ඔයාගේ number එක ඇතුළත් කරන්න.
+          </p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p><strong>O/L MATHS with OTR</strong></p>
-    <p>Mathematics Education • Grade 10 & 11 • Sri Lanka</p>
-    <p>© <span id="year"></span> OTR Maths. All rights reserved.</p>
+    <div class="container">
+      <p><strong>O/L MATHS with OTR</strong></p>
+      <p>MAGIC of the MATHS • Grade 10 & 11 • Sri Lanka</p>
+      <p>© <span id="year"></span> OTR Maths. All rights reserved.</p>
+    </div>
   </footer>
 
+  <a class="back-top" href="#home" aria-label="Back to top">↑</a>
+
   <script>
+    // Footer year
     document.getElementById("year").textContent =
       new Date().getFullYear();
+
+    // Lesson search and category filter
+    const searchInput = document.getElementById("lessonSearch");
+    const categorySelect = document.getElementById("lessonCategory");
+    const lessonCards = [...document.querySelectorAll(".lesson-card")];
+    const noResults = document.getElementById("noResults");
+
+    function filterLessons() {
+      const query = searchInput.value.trim().toLowerCase();
+      const category = categorySelect.value;
+      let visibleCount = 0;
+
+      lessonCards.forEach(card => {
+        const words = card.dataset.search.toLowerCase();
+        const cardCategory = card.dataset.category;
+        const matchesText = words.includes(query);
+        const matchesCategory =
+          category === "all" || cardCategory === category;
+        const show = matchesText && matchesCategory;
+
+        card.hidden = !show;
+        if (show) visibleCount++;
+      });
+
+      noResults.hidden = visibleCount > 0;
+    }
+
+    searchInput.addEventListener("input", filterLessons);
+    categorySelect.addEventListener("change", filterLessons);
+
+    // A small interactive mathematics quiz
+    const questions = [
+      {
+        q: "7 × 8 = ?",
+        answers: ["54", "56", "64", "48"],
+        correct: 1,
+        explanation: "7 × 8 = 56."
+      },
+      {
+        q: "x + 5 = 12 නම් x හි අගය කීයද?",
+        answers: ["5", "6", "7", "8"],
+        correct: 2,
+        explanation: "දෙපසින්ම 5 අඩු කළ විට x = 12 − 5 = 7."
+      },
+      {
+        q: "ත්‍රිකෝණයක අභ්‍යන්තර කෝණවල එකතුව කීයද?",
+        answers: ["90°", "180°", "270°", "360°"],
+        correct: 1,
+        explanation: "යුක්ලීඩීය ත්‍රිකෝණයක අභ්‍යන්තර කෝණවල එකතුව 180° යි."
+      },
+      {
+        q: "3² + 4² = ?",
+        answers: ["7", "12", "25", "49"],
+        correct: 2,
+        explanation: "3² + 4² = 9 + 16 = 25."
+      },
+      {
+        q: "2x = 18 නම් x හි අගය කීයද?",
+        answers: ["6", "8", "9", "12"],
+        correct: 2,
+        explanation: "දෙපසම 2 න් බෙදූ විට x = 18 ÷ 2 = 9."
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = false;
+
+    const quizQuestion = document.getElementById("quizQuestion");
+    const quizAnswers = document.getElementById("quizAnswers");
+    const quizFeedback = document.getElementById("quizFeedback");
+    const quizProgress = document.getElementById("quizProgress");
+    const nextButton = document.getElementById("nextQuestion");
+    const quizArea = document.getElementById("quizArea");
+    const quizResult = document.getElementById("quizResult");
+
+    function renderQuestion() {
+      answered = false;
+      const item = questions[currentQuestion];
+
+      quizProgress.textContent =
+        `Question ${currentQuestion + 1} / ${questions.length}`;
+      quizQuestion.textContent = item.q;
+      quizAnswers.replaceChildren();
+      quizFeedback.textContent = "";
+      nextButton.disabled = true;
+      nextButton.textContent =
+        currentQuestion === questions.length - 1
+          ? "View Result →"
+          : "Next Question →";
+
+      item.answers.forEach((answer, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "answer";
+        button.textContent =
+          String.fromCharCode(65 + index) + ". " + answer;
+
+        button.addEventListener("click", () => chooseAnswer(index));
+        quizAnswers.appendChild(button);
+      });
+    }
+
+    function chooseAnswer(index) {
+      if (answered) return;
+      answered = true;
+
+      const item = questions[currentQuestion];
+      const buttons = [...quizAnswers.querySelectorAll("button")];
+
+      buttons.forEach((button, i) => {
+        button.disabled = true;
+        if (i === item.correct) button.classList.add("correct");
+      });
+
+      if (index === item.correct) {
+        score++;
+        quizFeedback.textContent = "හරි! " + item.explanation;
+      } else {
+        buttons[index].classList.add("wrong");
+        quizFeedback.textContent =
+          "තවත් උත්සාහ කරමු. " + item.explanation;
+      }
+
+      nextButton.disabled = false;
+    }
+
+    nextButton.addEventListener("click", () => {
+      if (!answered) return;
+
+      currentQuestion++;
+
+      if (currentQuestion < questions.length) {
+        renderQuestion();
+      } else {
+        quizArea.hidden = true;
+        quizResult.hidden = false;
+        document.getElementById("scoreHeading").textContent =
+          `ඔයාගේ ලකුණු: ${score} / ${questions.length}`;
+
+        document.getElementById("scoreMessage").textContent =
+          score === questions.length
+            ? "නියමයි! සියලුම ප්‍රශ්න නිවැරදියි. දිගටම පුහුණු වෙන්න!"
+            : "හොඳ උත්සාහයක්! වැරදුණු ප්‍රශ්න නැවත අධ්‍යයනය කර තවත් වරක් උත්සාහ කරන්න.";
+      }
+    });
+
+    document.getElementById("restartQuiz").addEventListener("click", () => {
+      currentQuestion = 0;
+      score = 0;
+      quizArea.hidden = false;
+      quizResult.hidden = true;
+      renderQuestion();
+    });
+
+    renderQuestion();
   </script>
 </body>
 </html>
