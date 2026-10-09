@@ -1,14 +1,402 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="si">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>O/L MATHS with OTR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08111f">
+  <meta name="description" content="O/L MATHS with OTR - Grade 10 and 11 Mathematics lessons, O/L past papers and revision resources.">
+  <title>O/L MATHS with OTR | Learn Mathematics</title>
+
+  <style>
+    :root {
+      --bg: #08111f;
+      --panel: #101e31;
+      --gold: #ffc857;
+      --cyan: #54d9ed;
+      --white: #f5f7fb;
+      --muted: #aab8cc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, "Noto Sans Sinhala", sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 17, 31, .95);
+      border-bottom: 1px solid #24344b;
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding: 12px 0;
+    }
+
+    .logo {
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 19px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .hero {
+      padding: 82px 0 68px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at top, #18385a 0%, transparent 65%),
+        var(--bg);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 5px 14px;
+      border: 1px solid #526078;
+      border-radius: 30px;
+      color: var(--cyan);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 7vw, 66px);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      font-weight: 900;
+    }
+
+    h1 span { color: var(--gold); }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 28px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 21px;
+      border-radius: 9px;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .primary {
+      background: var(--gold);
+      color: #111827;
+    }
+
+    .secondary {
+      border: 1px solid #526078;
+      color: var(--white);
+    }
+
+    section { padding: 55px 0; }
+
+    .section-title {
+      font-size: clamp(25px, 4vw, 36px);
+      margin-bottom: 8px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      margin-bottom: 27px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      padding: 24px;
+      border: 1px solid #24344b;
+      border-radius: 16px;
+      transition: .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .card .emoji { font-size: 32px; }
+
+    .card h3 {
+      color: var(--gold);
+      margin: 12px 0 8px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .card-link {
+      color: var(--cyan);
+      font-weight: bold;
+    }
+
+    .feature {
+      background: #0d192a;
+      border-top: 1px solid #1d3047;
+      border-bottom: 1px solid #1d3047;
+    }
+
+    .banner {
+      text-align: center;
+      background: linear-gradient(135deg, #142c48, #101e31);
+      border: 1px solid #30445e;
+      padding: 35px 20px;
+      border-radius: 18px;
+    }
+
+    .banner h2 {
+      color: var(--gold);
+      font-size: clamp(25px, 5vw, 38px);
+      margin-bottom: 10px;
+    }
+
+    .banner p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      border-top: 1px solid #24344b;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer strong { color: var(--gold); }
+
+    @media (max-width: 600px) {
+      nav { justify-content: center; }
+      .nav-links { justify-content: center; gap: 12px; }
+      .hero { padding: 58px 0 45px; }
+      section { padding: 42px 0; }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>O/L MATHS with OTR</h1>
-  <h2>MAGIC of the MATHS</h2>
-  <p>Welcome to our O/L Mathematics learning website!</p>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#">📐 OTR MATHS</a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#lessons">Lessons</a>
+        <a href="#papers">Past Papers</a>
+        <a href="#resources">Resources</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <span class="eyebrow">GRADE 10 • GRADE 11 • G.C.E. O/L</span>
+
+        <h1>MAGIC of the <span>MATHS</span></h1>
+
+        <p>
+          සාමාන්‍ය පෙළ ගණිතය පහසුවෙන් ඉගෙන ගනිමු!
+          පාඩම්, පසුගිය විභාග ප්‍රශ්න සහ පුනරීක්ෂණ සමඟ
+          ඔබේ ගණිත දැනුම දියුණු කරගන්න.
+        </p>
+
+        <div class="buttons">
+          <a class="btn primary"
+             href="https://youtube.com/@olmathswithotr"
+             target="_blank" rel="noopener">
+            ▶ Watch Lessons
+          </a>
+
+          <a class="btn secondary" href="#papers">
+            Explore Past Papers
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="lessons">
+      <div class="container">
+        <h2 class="section-title">📚 Mathematics Lessons</h2>
+        <p class="section-desc">
+          ඔබට අවශ්‍ය පාඩම තෝරා YouTube එකෙන් වීඩියෝ බලන්න.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <div class="emoji">📐</div>
+            <h3>Trigonometry</h3>
+            <p>ත්‍රිකෝණමිතිය සහ අදාළ විභාග ප්‍රශ්න.</p>
+            <a class="card-link"
+               href="https://www.youtube.com/@olmathswithotr/search?query=Trigonometry"
+               target="_blank" rel="noopener">Watch Lessons ↗</a>
+          </article>
+
+          <article class="card">
+            <div class="emoji">➗</div>
+            <h3>Algebra</h3>
+            <p>සමීකරණ, වීජීය ප්‍රකාශන සහ ගණනය කිරීම්.</p>
+            <a class="card-link"
+               href="https://www.youtube.com/@olmathswithotr/search?query=Algebra"
+               target="_blank" rel="noopener">Watch Lessons ↗</a>
+          </article>
+
+          <article class="card">
+            <div class="emoji">📝</div>
+            <h3>Past Paper Discussion</h3>
+            <p>O/L පසුගිය ප්‍රශ්න සහ පිළිතුරු සාකච්ඡා.</p>
+            <a class="card-link"
+               href="https://www.youtube.com/@olmathswithotr/search?query=Past+Papers"
+               target="_blank" rel="noopener">Watch Discussions ↗</a>
+          </article>
+
+          <article class="card">
+            <div class="emoji">📊</div>
+            <h3>Grade 10 & 11</h3>
+            <p>10 සහ 11 ශ්‍රේණි ගණිත පාඩම් සඳහා වීඩියෝ සොයන්න.</p>
+            <a class="card-link"
+               href="https://www.youtube.com/@olmathswithotr/videos"
+               target="_blank" rel="noopener">View All Videos ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature" id="papers">
+      <div class="container">
+        <h2 class="section-title">📄 O/L Past Papers</h2>
+        <p class="section-desc">
+          පසුගිය ප්‍රශ්න පත්‍ර සාකච්ඡා කරමින් විභාගයට සූදානම් වෙන්න.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <div class="emoji">📘</div>
+            <h3>Past Paper Questions</h3>
+            <p>පසුගිය විභාග ප්‍රශ්න සාකච්ඡා.</p>
+            <a class="card-link"
+               href="https://www.youtube.com/@olmathswithotr/search?query=O%2FL+Past+Papers"
+               target="_blank" rel="noopener">Find Discussions ↗</a>
+          </article>
+
+          <article class="card">
+            <div class="emoji">🎯</div>
+            <h3>Revision</h3>
+            <p>විභාගයට පෙර පාඩම් නැවත මතක් කරගන්න.</p>
+            <a class="card-link"
+               href="https://www.youtube.com/@olmathswithotr/search?query=Revision"
+               target="_blank" rel="noopener">Start Revising ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="container">
+        <h2 class="section-title">🎓 Student Resources</h2>
+        <p class="section-desc">
+          අමතර අධ්‍යාපනික සම්පත් සඳහා ඉදිරියේදී තවත් අංග එකතු කරමු.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <div class="emoji">📥</div>
+            <h3>PDF Notes</h3>
+            <p>පාඩම් සටහන් සහ PDF බාගත කිරීම් ඉදිරියේදී මෙතැනට එකතු කළ හැකියි.</p>
+          </article>
+
+          <article class="card">
+            <div class="emoji">✅</div>
+            <h3>Online Quiz</h3>
+            <p>ඔබේ දැනුම පරීක්ෂා කිරීමට online quiz එකක් ඉදිරියේදී එකතු කරමු.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="banner">
+          <h2>O/L MATHS with OTR</h2>
+          <p>Learn Smart. Practise More. Achieve Your Goals.</p>
+
+          <a class="btn primary"
+             href="https://youtube.com/@olmathswithotr"
+             target="_blank" rel="noopener">
+            ▶ Subscribe on YouTube
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>O/L MATHS with OTR</strong></p>
+    <p>Mathematics Education • Grade 10 & 11 • Sri Lanka</p>
+    <p>© <span id="year"></span> OTR Maths. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
